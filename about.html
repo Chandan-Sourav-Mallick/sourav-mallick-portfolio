@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About  Sourav Mallick - Front End Web Developer">
+  <title>About | Sourav Mallick</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading...</p>
+    </div>
+  </div>
+
+  <!-- Shared Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">SM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
+              <span class="icon-sun">☀️</span>
+              <span class="icon-moon">🌙</span>
+            </button>
+          </li>
+          <li class="nav-item ms-2">
+            <div class="theme-color-dots" id="theme-colors" aria-label="Accent color">
+              <button class="dot" data-color="violet" style="--dot-color: #8b5cf6"></button>
+              <button class="dot" data-color="blue" style="--dot-color: #3b82f6"></button>
+              <button class="dot" data-color="emerald" style="--dot-color: #10b981"></button>
+              <button class="dot" data-color="orange" style="--dot-color: #f59e0b"></button>
+              <button class="dot" data-color="rose" style="--dot-color: #f43f5e"></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-hero">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">About Me</h1>
+        <p class="page-subtitle animate-on-scroll">Get to know me better</p>
+      </div>
+    </div>
+
+    <section class="section-padding">
+      <div class="container">
+        <!-- Profile card -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-5 col-md-6">
+            <div class="profile-card glass-card animate-on-scroll">
+              <div class="profile-img-wrap">
+                <img class="lazy-img" data-src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Sourav Mallick" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23e2e8f0' width='400' height='400'/%3E%3C/svg%3E">
+              </div>
+              <h2 class="h4"> Sourav Mallick</h2>
+              <p class="text-accent mb-0">Front End Web Developer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated counters -->
+        <div class="row g-4 mb-5">
+          <div class="col-6 col-md-3">
+            <div class="counter-item glass-card animate-on-scroll" data-counter="5">
+              <span class="counter-value">0</span>
+              <span class="counter-label">Years Learning</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="counter-item glass-card animate-on-scroll" data-counter="20">
+              <span class="counter-value">0</span>
+              <span class="counter-label">Projects Done</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="counter-item glass-card animate-on-scroll" data-counter="10">
+              <span class="counter-value">0</span>
+              <span class="counter-label">Skills</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="counter-item glass-card animate-on-scroll" data-counter="100">
+              <span class="counter-value">0</span>
+              <span class="counter-label">% Passion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio + lazy image -->
+        <div class="row align-items-center g-5 mb-5">
+          <div class="col-lg-5">
+            <div class="about-image-wrapper glass-card animate-on-scroll">
+              <img class="lazy-img img-fluid rounded-4" data-src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=500&fit=crop" alt="About Sourav" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Crect fill='%23e2e8f0' width='500' height='500'/%3E%3C/svg%3E">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="about-content glass-card p-4 p-lg-5 animate-on-scroll">
+              <p class="lead text-accent">Front End Web Developer</p>
+              <p>I'm a passionate front-end developer with a <strong>BSc from North Western University (2024)</strong>. I specialize in turning ideas into clean, responsive, and user-friendly interfaces.</p>
+              <p>I love working with HTML, CSS, JavaScript, and modern frameworks like React. I'm committed to writing maintainable code, following best practices, and staying updated with the latest web technologies.</p>
+              <ul class="about-highlights">
+                <li>Clean, semantic HTML & accessible markup</li>
+                <li>Responsive design & mobile-first approach</li>
+                <li>Performance optimization & modern tooling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vertical timeline -->
+        <h2 class="section-title animate-on-scroll">My Journey</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="timeline-vertical">
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-card glass-card p-4">
+                  <h3>Education</h3>
+                  <h4>BSc — North Western University</h4>
+                  <span class="text-accent">Completed 2024</span>
+                  <p class="mb-0">Graduated with focus on computer science and web technologies.</p>
+                </div>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-card glass-card p-4">
+                  <h3>Front End Focus</h3>
+                  <h4>Self-paced & Projects</h4>
+                  <span class="text-accent">2022 – Present</span>
+                  <p class="mb-0">HTML, CSS, JavaScript, React, TypeScript, and modern tooling.</p>
+                </div>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-card glass-card p-4">
+                  <h3>Today</h3>
+                  <h4>Building & Learning</h4>
+                  <span class="text-accent">Present</span>
+                  <p class="mb-0">Building responsive websites, SPAs, and UI components.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Chandan Sourav Mallick. Built with HTML, CSS & JavaScript.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

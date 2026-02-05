@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skills - Sourav Mallick Front End Web Developer">
+  <title>Skills | Sourav Mallick</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+  <div id="page-loader" class="page-loader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading...</p>
+    </div>
+  </div>
+
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">SM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button id="theme-toggle" class="btn theme-toggle-btn" aria-label="Toggle theme">
+              <span class="icon-sun">☀️</span>
+              <span class="icon-moon">🌙</span>
+            </button>
+          </li>
+          <li class="nav-item ms-2">
+            <div class="theme-color-dots" id="theme-colors" aria-label="Accent color">
+              <button class="dot" data-color="violet" style="--dot-color: #8b5cf6"></button>
+              <button class="dot" data-color="blue" style="--dot-color: #3b82f6"></button>
+              <button class="dot" data-color="emerald" style="--dot-color: #10b981"></button>
+              <button class="dot" data-color="orange" style="--dot-color: #f59e0b"></button>
+              <button class="dot" data-color="rose" style="--dot-color: #f43f5e"></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-main">
+    <div class="page-hero">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">Skills</h1>
+        <p class="page-subtitle animate-on-scroll">Technologies I work with</p>
+      </div>
+    </div>
+
+    <section class="skills section-padding">
+      <div class="container">
+        <div class="skill-filters" id="skill-filters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="markup">Markup & Style</button>
+          <button class="filter-btn" data-category="script">JavaScript & TS</button>
+          <button class="filter-btn" data-category="framework">Frameworks</button>
+          <button class="filter-btn" data-category="tools">Tools</button>
+        </div>
+
+        <div class="row g-4" id="skills-grid">
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="markup">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">HTML5</div>
+              <h3>HTML</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="95"></div>
+              </div>
+              <span class="skill-percent">95%</span>
+              <div class="skill-detail-tooltip">Semantic markup, accessibility (ARIA), forms, SEO-friendly structure.</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="markup">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">CSS3</div>
+              <h3>CSS / Sass</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="92"></div>
+              </div>
+              <span class="skill-percent">92%</span>
+              <div class="skill-detail-tooltip">Flexbox, Grid, variables, animations, Sass nesting & mixins.</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="markup">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">Bootstrap</div>
+              <h3>Bootstrap 5</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="90"></div>
+              </div>
+              <span class="skill-percent">90%</span>
+              <div class="skill-detail-tooltip">Grid, components, utilities, customization, responsive.</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="script">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">JS</div>
+              <h3>JavaScript</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="88"></div>
+              </div>
+              <span class="skill-percent">88%</span>
+              <div class="skill-detail-tooltip">ES6+, DOM, async/await, fetch API, event handling.</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="script">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">TS</div>
+              <h3>TypeScript</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="85"></div>
+              </div>
+              <span class="skill-percent">85%</span>
+              <div class="skill-detail-tooltip">Types, interfaces, generics, with React and Node.</div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 skill-card-filterable" data-category="framework">
+            <div class="skill-card skill-card-detail glass-card animate-on-scroll">
+              <div class="skill-icon">⚛</div>
+              <h3>React & Redux</h3>
+              <div class="progress-wrapper">
+                <div class="progress-bar-fill" data-progress="87"></div>
+              </div>
+              <span class="skill-percent">87%</span>
+              <div class="skill-detail-tooltip">Components, hooks, state, Redux store, async actions.</div>
+            </div>
+          </div>
+          <div class="col-12 skill-card-filterable" data-category="tools">
+            <div class="skill-tools glass-card p-4 animate-on-scroll">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Responsive Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Sourav Mallick. Built with HTML, CSS & JavaScript.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
