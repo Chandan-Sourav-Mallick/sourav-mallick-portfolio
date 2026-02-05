@@ -466,33 +466,95 @@
       formMessage.setAttribute('role', 'alert');
     }
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (formMessage) formMessage.classList.remove('show');
+    // form.addEventListener('submit', (e) => {
+    //   e.preventDefault();
+    //   if (formMessage) formMessage.classList.remove('show');
 
-      const name = nameInput ? nameInput.value.trim() : '';
-      const email = emailInput ? emailInput.value.trim() : '';
-      const message = messageInput ? messageInput.value.trim() : '';
-      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //   const name = nameInput ? nameInput.value.trim() : '';
+    //   const email = emailInput ? emailInput.value.trim() : '';
+    //   const message = messageInput ? messageInput.value.trim() : '';
+    //   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      let valid = true;
-      if (!name) { if (nameInput) nameInput.classList.add('is-invalid'); valid = false; } else if (nameInput) nameInput.classList.remove('is-invalid');
-      if (!email || !validEmail.test(email)) { if (emailInput) emailInput.classList.add('is-invalid'); valid = false; } else if (emailInput) emailInput.classList.remove('is-invalid');
-      if (!message || message.length < 10) { if (messageInput) messageInput.classList.add('is-invalid'); valid = false; } else if (messageInput) messageInput.classList.remove('is-invalid');
+    //   let valid = true;
+    //   if (!name) { if (nameInput) nameInput.classList.add('is-invalid'); valid = false; } else if (nameInput) nameInput.classList.remove('is-invalid');
+    //   if (!email || !validEmail.test(email)) { if (emailInput) emailInput.classList.add('is-invalid'); valid = false; } else if (emailInput) emailInput.classList.remove('is-invalid');
+    //   if (!message || message.length < 10) { if (messageInput) messageInput.classList.add('is-invalid'); valid = false; } else if (messageInput) messageInput.classList.remove('is-invalid');
 
-      if (!valid) {
-        showFormMessage('error', 'Please fix the errors above.');
-        return;
-      }
+    //   if (!valid) {
+    //     showFormMessage('error', 'Please fix the errors above.');
+    //     return;
+    //   }
 
-      const btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-      setTimeout(() => {
-        showFormMessage('success', 'Thank you! Your message has been sent. I\'ll get back to you soon.');
-        form.reset();
-        [nameInput, emailInput, messageInput].forEach((input) => { if (input) input.classList.remove('filled', 'is-invalid'); });
-        if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
-      }, 800);
+    //   const btn = form.querySelector('button[type="submit"]');
+    //   if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    //   setTimeout(() => {
+    //     showFormMessage('success', 'Thank you! Your message has been sent. I\'ll get back to you soon.');
+    //     form.reset();
+    //     [nameInput, emailInput, messageInput].forEach((input) => { if (input) input.classList.remove('filled', 'is-invalid'); });
+    //     if (btn) { btn.textContent = 'Send Message'; btn.disabled = false; }
+    //   }, 800);
+    // });
+
+
+    form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  if (formMessage) formMessage.classList.remove('show');
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const message = messageInput.value.trim();
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  let valid = true;
+
+  if (!name) {
+    nameInput.classList.add('is-invalid');
+    valid = false;
+  } else nameInput.classList.remove('is-invalid');
+
+  if (!email || !validEmail.test(email)) {
+    emailInput.classList.add('is-invalid');
+    valid = false;
+  } else emailInput.classList.remove('is-invalid');
+
+  if (!message || message.length < 10) {
+    messageInput.classList.add('is-invalid');
+    valid = false;
+  } else messageInput.classList.remove('is-invalid');
+
+  if (!valid) {
+    showFormMessage('error', 'Please fix the errors above.');
+    return;
+  }
+
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
     });
+
+    if (response.ok) {
+      showFormMessage('success', "Thank you! Your message has been sent.");
+      form.reset();
+      [nameInput, emailInput, messageInput].forEach(i =>
+        i.classList.remove('filled', 'is-invalid')
+      );
+    } else {
+      showFormMessage('error', 'Oops! Something went wrong.');
+    }
+  } catch (err) {
+    showFormMessage('error', 'Network error. Please try again.');
+  }
+
+  btn.textContent = 'Send Message';
+  btn.disabled = false;
+});
+
   })();
 })();
